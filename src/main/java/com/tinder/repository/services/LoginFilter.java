@@ -1,4 +1,4 @@
-package com.tinder.repository.filters;
+package com.tinder.repository.services;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -24,7 +24,7 @@ public class LoginFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         } else{
             servletResponse1.setStatus(401);
-            servletResponse1.getWriter().print("");
+            servletResponse1.getWriter().print("wrong credentials");
         }
     }
 
