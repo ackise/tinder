@@ -1,4 +1,4 @@
-package com.tinder.repository;
+package com.tinder.repository.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

@@ -53,6 +53,11 @@
       <artifactId>HikariCP</artifactId>
       <version>5.0.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>11.0.6</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
