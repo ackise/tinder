@@ -11,6 +11,13 @@ import java.io.IOException;
 public class UsersServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().print("Users");
+        req.getRequestDispatcher("/like-page.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //Cyx: action = like or dislike
+        String action = req.getParameter("action");
+        req.getRequestDispatcher("/like-page.jsp").forward(req, resp);
     }
 }
