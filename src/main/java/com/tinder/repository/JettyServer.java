@@ -16,7 +16,7 @@ public class JettyServer {
         server.setConnectors(new Connector[]{connector});
 
         ServletHandler handler = new ServletHandler();
-        handler.addServletWithMapping(LikedServlet.class, "/users");
+        handler.addServletWithMapping(LikedServlet.class, "/liked");
 
         server.setHandler(handler);
 
