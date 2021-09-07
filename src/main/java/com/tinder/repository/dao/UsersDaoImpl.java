@@ -1,6 +1,5 @@
 package com.tinder.repository.dao;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tinder.repository.DataBase;
 import com.tinder.repository.models.User;
 
@@ -22,6 +21,7 @@ public class UsersDaoImpl implements UserDao {
         PreparedStatement pstmt = database.prepareStatement(SQL);
         pstmt.setInt(1, id);
         ResultSet rs = pstmt.executeQuery();
+        rs.next();
         return new User(rs.getInt("id"), rs.getString("name"), rs.getString("avatar"));
     }
 
