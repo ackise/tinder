@@ -5,14 +5,15 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 
 public class JettyServer {
-    private final Server server = new Server();
+    private Server server;
 
     public void start() {
+        server = new Server();
+
         ServerConnector connector = new ServerConnector(server);
         connector.setPort(8080);
 
         server.setConnectors(new Connector[]{connector});
-
 
         try {
             server.start();
