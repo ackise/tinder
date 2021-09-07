@@ -13,6 +13,7 @@ public class JettyServer {
 
         server.setConnectors(new Connector[]{connector});
 
+
         try {
             server.start();
         } catch (Exception e) {
