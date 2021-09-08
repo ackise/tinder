@@ -1,23 +1,24 @@
 package com.tinder.repository.controllers;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+//import jakarta.servlet.ServletException;
+//import jakarta.servlet.http.HttpServlet;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(urlPatterns = "/liked")
 public class LikedServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-//        resp.getWriter().print("Hello");
-        resp.setContentType("text/html");
-        // can't find correct way for project
-        RequestDispatcher view = req.getRequestDispatcher("/people-list.html");
-
         try {
-            view.forward(req, resp);
+//            resp.setContentType("text/html");
+            req.getRequestDispatcher("/people-list.jsp").forward(req, resp);
         } catch (ServletException e) {
             e.printStackTrace();
         }

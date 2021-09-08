@@ -1,6 +1,7 @@
 package com.tinder.repository;
 
 import com.tinder.repository.controllers.LikedServlet;
+import com.tinder.repository.controllers.UsersServlet;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -16,7 +17,8 @@ public class JettyServer {
         server.setConnectors(new Connector[]{connector});
 
         ServletHandler handler = new ServletHandler();
-        handler.addServletWithMapping(LikedServlet.class, "/liked");
+//        handler.addServletWithMapping(LikedServlet.class, "/liked");
+//        handler.addServletWithMapping(UsersServlet.class, "/users");
 
         server.setHandler(handler);
 
