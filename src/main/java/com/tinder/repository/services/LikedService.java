@@ -3,6 +3,7 @@ package com.tinder.repository.services;
 import com.tinder.repository.dao.LikedDao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LikedService {
@@ -18,6 +19,6 @@ public class LikedService {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return null;
+        return new ArrayList<>();
     }
 }
