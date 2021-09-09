@@ -15,7 +15,7 @@ public class UsersDaoImpl implements UserDao {
 
     @Override
     public User getUserById(int id) throws SQLException {
-        String SQL = "SELECT id,name,avatar "
+        String SQL = "SELECT id, name, avatar "
                 + "FROM users "
                 + "WHERE id = ?";
         PreparedStatement pstmt = database.prepareStatement(SQL);
@@ -36,6 +36,20 @@ public class UsersDaoImpl implements UserDao {
             usersList.add(new User(rs.getInt("id"), rs.getString("name"), rs.getString("avatar")));
         }
         return usersList;
+    }
+
+    @Override
+    public User getUsersCredentials(String email,String password) throws SQLException {
+        String SQL = "SELECT id, name ,email, password FROM users WHERE email = ? AND password = ?";
+        PreparedStatement pstmt = database.prepareStatement(SQL);
+        pstmt.setString(1,email);
+        pstmt.setString(2,password);
+        ResultSet rs = pstmt.executeQuery();
+        User user = null;
+        while(rs.next()) {
+            user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("password"));
+        }
+        return user;
     }
 
 }

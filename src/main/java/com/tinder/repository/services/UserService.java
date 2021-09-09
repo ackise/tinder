@@ -21,6 +21,8 @@ public class UserService {
 
     public ArrayList<User> getUsersList() throws SQLException, JsonProcessingException {
         return userDao.getUsersList();
-
+    }
+    public User getUsersCredentials(String name, String password) throws SQLException, JsonProcessingException {
+        return userDao.getUsersCredentials(name,password);
     }
 }

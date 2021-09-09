@@ -8,4 +8,5 @@ import java.util.ArrayList;
 public interface UserDao {
     public User getUserById(int id) throws SQLException;
     public ArrayList<User> getUsersList() throws SQLException;
+    public User getUsersCredentials(String name,String password) throws SQLException;
 }
